@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
         // ID is of type string because we 
         // want to put alpha numerical GUID
         // auto-generated randomly
-        public string  Id { get; set; }
+        //public string  Id { get; set; }
 
         // validation
         [StringLength(20)]
@@ -26,13 +26,13 @@ namespace MyShop.Core.Models
         public string Category { get; set; }
         public string Image { get; set; }
 
-
-        public Product()
+        // Creation of the Id is handled in the BaseEntity class
+       /* public Product()
         {
             // every time a new product is created
             // we are automatically generating a new ID.
             // Instead of letting the database to create it
             this.Id = Guid.NewGuid().ToString();
-        }
+        }*/
     }
 }
